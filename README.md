@@ -247,13 +247,22 @@ Formula skor keputusan menggunakan pendekatan weighted sum model (WSM) dengan bo
 
 <img width="1080" height="246" alt="151583" src="https://github.com/user-attachments/assets/a3cfe720-1e86-4b11-9030-a43d30ac6788" />
 
-"Biaya dinormalisasi dengan membagi 1000 agar satuan sebanding dengan jarak (km) dan waktu (menit). Rute dengan skor lebih rendah dianggap lebih optimal."
+# Biaya dinormalisasi dengan membagi 1000 agar satuan sebanding dengan jarak (km) dan waktu (menit). Rute dengan skor lebih rendah dianggap lebih optimal. 
+
+* 4.3  Tampilan Output Sistem
+
+<img width="890" height="332" alt="151591" src="https://github.com/user-attachments/assets/57f2bda0-795d-4a32-a0ca-8e62b04f13a9" />
 
 
+# BAB 5 — PENGUJIAN DAN ANALISIS
 
+* 5.1  Skenario Pengujian
 
+Pengujian dilakukan terhadap tiga skenario utama yang mencakup seluruh fungsionalitas sistem.
 
+*" Skenario 1 — Analisis MST via Algoritma Prim (Node Awal: LBJ)
 
+Algoritma Prim berjalan dari Terminal Labuan Bajo (LBJ) dan menghasilkan 7 edge MST yang menghubungkan seluruh 8 halte. Berikut rekonstruksi hasil MST:
 
 
 
