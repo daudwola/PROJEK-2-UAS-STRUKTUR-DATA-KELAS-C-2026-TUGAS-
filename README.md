@@ -291,4 +291,41 @@ Sistem mencari rute dari Terminal Labuan Bajo ke Terminal Carep dengan prioritas
 
 <img width="864" height="356" alt="151601" src="https://github.com/user-attachments/assets/86a03138-234f-49de-b0f8-67c1d8b69ee6" />
 
+<img width="900" height="509" alt="151607" src="https://github.com/user-attachments/assets/6cc8fabe-6317-4b3b-bb8e-b24874eec534" />
+
+# BAB 6 — KESIMPULAN
+
+# 6.1  Kesimpulan
+
+1. Directed Graph berhasil diimplementasikan sebagai representasi data jaringan bus Labuan Bajo. Adjacency list dengan 8 node dan 20 edge mampu merepresentasikan topologi jaringan yang kompleks secara efisien dengan kompleksitas ruang O(V + E).
+
+2. Algoritma Prim berhasil menemukan Minimum Spanning Tree yang menghubungkan seluruh 8 halte hanya dengan 7 edge dan total jarak 14.6 km. MST ini merepresentasikan backbone rute bus paling efisien dan dapat dijadikan acuan dalam perancangan infrastruktur transportasi.
+
+3. Integrasi BFS dan DFS memberikan dua perspektif pencarian jalur yang saling melengkapi: BFS menjamin jalur dengan hop minimum (efisien untuk pengguna yang menghindari transit), sedangkan DFS menyediakan rute alternatif sebagai cadangan.
+
+4. Modul DSS dengan formula skor multi-kriteria (40% jarak, 40% waktu, 20% biaya) berhasil menghasilkan rekomendasi rute yang terukur, transparan, dan dapat disesuaikan dengan preferensi pengguna.
+
+5.Sistem ini membuktikan bahwa struktur data dan algoritma graf merupakan fondasi yang kuat untuk membangun sistem pendukung keputusan di bidang transportasi publik.
+
+
+6.2  Saran Pengembangan
+
+Pengembangan Jangka Pendek
+
+* Integrasi Algoritma Dijkstra: Menambahkan Dijkstra untuk pencarian jalur terpendek berdasarkan bobot (jarak/waktu) yang lebih akurat dibandingkan BFS.
+
+* Antarmuka Pengguna (GUI/Web): Mengembangkan tampilan peta interaktif berbasis web (Leaflet.js atau Folium) yang memvisualisasikan graf dan MST secara grafis.
+
+* Data Real-time: Mengintegrasikan data GPS armada bus dan sensor kepadatan penumpang untuk pembaruan bobot edge secara dinamis.
+  
+# Pengembangan Jangka Panjang
+
+* Perluasan Jaringan: Menambahkan node untuk daya tarik wisata utama (Pulau Komodo, Rinca, Pink Beach) dengan rute ferry/boat sebagai edge multimodal.
+  
+* Machine Learning Integration: Menerapkan model prediksi permintaan penumpang untuk optimasi jadwal bus berbasis waktu (time-dependent graph).
+  
+* Mobile Application: Mengembangkan aplikasi mobile untuk wisatawan dan warga lokal dengan fitur pencarian rute real-time, notifikasi keterlambatan, dan pembelian tiket digital.
+
+* Multi-objective Optimization: Mengganti WSM dengan algoritma Pareto-optimal untuk penanganan trade-off antara jarak, waktu, biaya, dan kenyamanan secara simultan.
+
 
