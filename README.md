@@ -235,6 +235,22 @@ Inti implementasi Prim menggunakan heapq Python sebagai min-heap. Karena graf be
 
 <img width="913" height="378" alt="151534" src="https://github.com/user-attachments/assets/5cb49dd8-35af-41ef-a277-5c6b40fee4e5" />
 
+* 4.2.3  Modul BFS
+  
+BFS menggunakan collections.deque sebagai antrian FIFO yang efisien. Menyimpan jalur lengkap di setiap state untuk rekonstruksi rute: ada 
+
+<img width="926" height="323" alt="151579" src="https://github.com/user-attachments/assets/9532e175-8460-4564-bb0d-7876c015b9aa" />
+
+4.2.4  Skor Keputusan Multi-Kriteria
+Formula skor keputusan menggunakan pendekatan weighted sum model (WSM) dengan bobot yang dapat dikustomisasi:
+
+<img width="1080" height="246" alt="151583" src="https://github.com/user-attachments/assets/a3cfe720-1e86-4b11-9030-a43d30ac6788" />
+
+
+
+
+
+
 
 
 
