@@ -329,3 +329,6 @@ Pengembangan Jangka Pendek
 * Multi-objective Optimization: Mengganti WSM dengan algoritma Pareto-optimal untuk penanganan trade-off antara jarak, waktu, biaya, dan kenyamanan secara simultan.
 
 
+
+
+# https://ap.wps.com/cms/docs/d/cbPaeokbCh79ltRA?sa=601.1074
