@@ -1,3 +1,4 @@
+
 # PROJEK-2-UAS-STRUKTUR-DATA-KELAS-C-2026-TUGAS-
 PROJEK 2 UAS STRUKTUR DATA
 
@@ -73,10 +74,29 @@ Manfaat Praktis
 Graf (Graph) adalah struktur data yang merepresentasikan hubungan antara kumpulan objek. Secara formal, graf G didefinisikan sebagai pasangan terurut G = (V, E), di mana V adalah himpunan simpul (vertices/nodes) dan E adalah himpunan sisi (edges) yang menghubungkan pasangan simpul
 
 * 2.1.1  Jenis-Jenis Graf
+<img width="700" height="200" alt="image" src="https://github.com/user-attachments/assets/db305c0c-5283-4bc7-9dac-0f4f8fc378d2" />
 
+* 2.1.2  Representasi Graf — Adjacency List
+  
+Proyek ini menggunakan Adjacency List sebagai representasi internal graf. Setiap simpul menyimpan daftar tetangga beserta atribut sisi (jarak, waktu, biaya). Kompleksitas ruang: O(V + E), lebih efisien dibanding Adjacency Matrix O(V²) untuk graf jarang (sparse graph).
 
+<img width="866" height="154" alt="image" src="https://github.com/user-attachments/assets/99646f98-712b-4561-abbd-d436ec1c8941" />
 
+* 2.2  Decision Support System (DSS)
 
+Decision Support System (DSS) adalah sistem berbasis komputer yang membantu pengambil keputusan dalam menghadapi masalah semi-terstruktur atau tidak terstruktur. DSS mengintegrasikan data, model analitik, dan antarmuka pengguna untuk menghasilkan rekomendasi yang mendukung proses pengambilan keputusan.
+
+# Komponen utama DSS dalam proyek ini:
+
+▸	Data Management: Struktur data Directed Graph untuk menyimpan informasi halte dan rute bus.
+
+▸	Model Management: Algoritma Prim, BFS, dan DFS sebagai model analitik.
+
+▸	Knowledge Base: Aturan rekomendasi berdasarkan preferensi pengguna (jarak/waktu/biaya).
+
+▸	User Interface: Output terformat di terminal dengan analisis skor keputusan multi-kriteria.
+
+<img width="699" height="200" alt="image" src="https://github.com/user-attachments/assets/a344eb2a-024e-4022-941e-b25612ebff3c" />
 
 
 
