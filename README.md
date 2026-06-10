@@ -241,12 +241,13 @@ BFS menggunakan collections.deque sebagai antrian FIFO yang efisien. Menyimpan j
 
 <img width="926" height="323" alt="151579" src="https://github.com/user-attachments/assets/9532e175-8460-4564-bb0d-7876c015b9aa" />
 
-4.2.4  Skor Keputusan Multi-Kriteria
+* 4.2.4  Skor Keputusan Multi-Kriteria
+  
 Formula skor keputusan menggunakan pendekatan weighted sum model (WSM) dengan bobot yang dapat dikustomisasi:
 
 <img width="1080" height="246" alt="151583" src="https://github.com/user-attachments/assets/a3cfe720-1e86-4b11-9030-a43d30ac6788" />
 
-
+"Biaya dinormalisasi dengan membagi 1000 agar satuan sebanding dengan jarak (km) dan waktu (menit). Rute dengan skor lebih rendah dianggap lebih optimal."
 
 
 
