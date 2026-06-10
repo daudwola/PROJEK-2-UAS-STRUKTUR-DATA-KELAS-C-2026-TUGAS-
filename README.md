@@ -216,15 +216,24 @@ seluruh 8 halte dengan total jarak minimum. Algoritma bekerja secara greedy meng
 # BAB 4 — IMPLEMENTASI
 
 * 4.1  Struktur Program
+  
 Program diimplementasikan dalam Python dengan arsitektur berorientasi objek (OOP). Terdiri dari 5 kelas utama yang saling berinteraksi:
 
+<img width="904" height="486" alt="151518" src="https://github.com/user-attachments/assets/8267a201-612d-47cf-a53f-b77afb7179d2" />
 
 
+* 4.2  Penjelasan Kode
 
+* 4.2.1  Kelas DirectedGraph
 
+Kelas inti yang merepresentasikan jaringan bus menggunakan adjacency list berbasis defaultdict dari Python. Desain ini memungkinkan akses O(1) ke daftar tetangga setiap node.
 
+<img width="907" height="280" alt="151528" src="https://github.com/user-attachments/assets/24b4b402-1679-4546-b796-2840157f1280" />
 
+4.2.2  Algoritma Prim — Core Logic
+Inti implementasi Prim menggunakan heapq Python sebagai min-heap. Karena graf bersifat directed, sisi dua arah dibuat secara sementara untuk keperluan MST:
 
+<img width="913" height="378" alt="151534" src="https://github.com/user-attachments/assets/5cb49dd8-35af-41ef-a277-5c6b40fee4e5" />
 
 
 
