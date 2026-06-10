@@ -14,186 +14,74 @@ __________________________________
 
 # BAB I  PENDAHULUAN
 
-#  1.1  Latar Belakang
+* 1.1  Latar Belakang
 
-Labuan Bajo merupakan salah satu destinasi wisata unggulan di Indonesia yang terus berkembang pesat, khususnya setelah ditetapkan sebagai salah satu dari lima destinasi super-prioritas pariwisata nasional. Pertumbuhan jumlah wisatawan yang signifikan membawa tantangan tersendiri bagi sistem transportasi publik di kawasan tersebut.
-Sistem transportasi bus di Labuan Bajo saat ini masih menghadapi berbagai permasalahan, antara lain ketidakefisienan rute, kurangnya informasi real-time bagi penumpang, dan belum optimalnya pemanfaatan teknologi dalam perencanaan jaringan transportasi. Hal ini mengakibatkan waktu tempuh yang tidak efisien, biaya operasional yang tinggi, serta ketidakpuasan pengguna layanan.
-Struktur data Graph menawarkan solusi yang sangat tepat untuk memodelkan jaringan transportasi. Setiap halte atau terminal dapat direpresentasikan sebagai node/vertex, sedangkan rute bus yang menghubungkan antar halte direpresentasikan sebagai edge. Dengan pendekatan ini, berbagai algoritma graph dapat diterapkan untuk menganalisis dan mengoptimalkan jaringan transportasi secara matematis dan terstruktur.
-Decision Support System (DSS) berbasis graph memberikan kemampuan kepada pengambil keputusan untuk menganalisis jaringan transportasi, menemukan rute optimal, dan merekomendasikan kebijakan berdasarkan data relasional yang komprehensif. Implementasi Algoritma Prim sebagai Minimum Spanning Tree memungkinkan penentuan jaringan backbone transportasi yang paling efisien dengan total jarak minimum.
+Labuan Bajo, sebagai destinasi wisata kelas dunia di Nusa Tenggara Timur, mengalami pertumbuhan kunjungan wisatawan yang signifikan dalam beberapa tahun terakhir. Pertumbuhan ini membawa konsekuensi langsung pada meningkatnya mobilitas penduduk dan wisatawan di dalam kota, yang pada akhirnya menimbulkan tantangan serius dalam pengelolaan sistem transportasi publik.
 
-#  1.2  Rumusan Masalah
-  * Bagaimana cara merepresentasikan jaringan rute bus Labuan Bajo menggunakan struktur data Directed Graph?
+Sistem transportasi publik yang ada saat ini belum mampu merespons kebutuhan mobilitas secara optimal. Rute bus yang tidak efisien, ketidakjelasan informasi jadwal dan tarif, serta ketidakmampuan sistem dalam memberikan rekomendasi rute yang dipersonalisasi menjadi keluhan utama pengguna transportasi di kota ini.
 
-  * Bagaimana implementasi Algoritma Prim untuk menemukan Minimum Spanning Tree pada jaringan transportasi?
+Dalam konteks ilmu komputer, permasalahan jaringan transportasi dapat dimodelkan secara elegan menggunakan struktur data Graf (Graph). Setiap halte bus direpresentasikan sebagai simpul (node), sementara rute yang menghubungkan dua halte direpresentasikan sebagai sisi (edge) berbobot. Model ini memungkinkan penerapan berbagai algoritma graf klasik untuk menganalisis dan mengoptimalkan jaringan transportasi.
 
-  * Bagaimana DSS dapat memberikan rekomendasi rute yang optimal berdasarkan preferensi pengguna (jarak, waktu, atau biaya)?
+Salah satu algoritma yang relevan adalah Algoritma Prim untuk mencari Minimum Spanning Tree (MST). MST memberikan representasi jaringan rute backbone paling efisien yang menghubungkan seluruh halte dengan total jarak minimum — sangat berguna dalam perencanaan pengembangan infrastruktur transportasi.
 
-  * Bagaimana analisis hubungan antar halte dapat mendukung pengambilan keputusan dalam perencanaan transportasi?
+Proyek ini merupakan implementasi Decision Support System (DSS) berbasis Directed Graph untuk sistem transportasi pintar di Labuan Bajo. Program diimplementasikan dalam bahasa Python dengan mengintegrasikan Algoritma Prim (MST), Breadth-First Search (BFS), dan Depth-First Search (DFS) sebagai komponen inti pengambilan keputusan.
 
-#  1.3  Tujuan
-   * 1.Merancang dan mengimplementasikan Directed Graph sebagai representasi jaringan bus transportasi Labuan Bajo.
-
-   * 2.Mengimplementasikan Algoritma Prim untuk menentukan jaringan rute bus paling efisien menggunakan pendekatan Minimum Spanning Tree.
-     
-   * 3.Membangun modul DSS yang mampu memberikan rekomendasi rute berdasarkan preferensi jarak, waktu, dan biaya.
+* 1.2  Rumusan Masalah
   
-   * 4.Melakukan analisis topologi jaringan transportasi melalui degree analysis pada Directed Graph.
+1.	Bagaimana merepresentasikan jaringan rute bus Labuan Bajo dalam bentuk Directed Graph yang dapat diproses secara komputasional?
+2.	Bagaimana mengimplementasikan Algoritma Prim untuk menemukan Minimum Spanning Tree pada jaringan transportasi guna mengidentifikasi rute backbone paling efisien?
+3.	Bagaimana mengintegrasikan algoritma pencarian jalur (BFS dan DFS) untuk memberikan rekomendasi rute berdasarkan preferensi pengguna (jarak, waktu, atau biaya)?
+4.	Bagaimana merancang sistem DSS yang dapat menganalisis dan menyajikan informasi jaringan transportasi secara informatif kepada pengguna?
+
+* 1.3  Tujuan
   
-   * 5.Menghasilkan aplikasi berbasis Python yang interaktif dan terstruktur sebagai implementasi nyata struktur data graph.
+▸	Mengimplementasikan Directed Graph sebagai struktur data utama untuk merepresentasikan jaringan bus Labuan Bajo dengan 8 halte dan 20 rute.
 
- # 1.4  Manfaat
- 
-Manfaat akademis: Memahami secara mendalam implementasi struktur data Graph dalam studi kasus dunia nyata, serta menguasai algoritma Prim sebagai salah satu algoritma graph fundamental.
+▸	Menerapkan Algoritma Prim untuk menemukan MST yang merepresentasikan jaringan rute bus paling efisien dari sisi total jarak tempuh.
 
-Manfaat praktis: Memberikan prototype sistem pendukung keputusan yang dapat dikembangkan lebih lanjut oleh Dinas Perhubungan Kabupaten Manggarai Barat untuk perencanaan dan optimasi jaringan transportasi bus di Labuan Bajo.
+▸	Mengembangkan modul pencarian jalur menggunakan BFS (pencarian jalur terpendek berdasarkan jumlah hop) dan DFS (pencarian jalur alternatif) antara dua halte.
 
-# BAB II  LANDASAN TEORI
+▸	Membangun modul DSS yang mengintegrasikan seluruh komponen di atas untuk menghasilkan rekomendasi rute dan analisis jaringan transportasi yang komprehensif.
 
-#  2.1  Struktur Data Graph
-Graph adalah struktur data non-linear yang terdiri dari sekumpulan vertex (simpul/node) dan sekumpulan edge (sisi/busur) yang menghubungkan pasangan vertex. Secara formal, sebuah graph G dapat didefinisikan sebagai G = (V, E), di mana V adalah himpunan vertex dan E adalah himpunan edge.
-Graph memiliki berbagai aplikasi dalam ilmu komputer dan kehidupan nyata, termasuk pemodelan jaringan komputer, peta jalan, jejaring sosial, dan sistem transportasi. Kemampuan graph dalam merepresentasikan hubungan kompleks antar entitas menjadikannya salah satu struktur data yang paling powerful.
+* 1.4  Manfaat
+  
+Manfaat Akademis
 
-#  2.1.1  Directed Graph (Graf Berarah)
-Directed Graph (Digraph) adalah jenis graph di mana setiap edge memiliki arah tertentu. Edge dalam directed graph direpresentasikan sebagai pasangan terurut (u, v), yang berarti terdapat koneksi berarah dari vertex u menuju vertex v, tetapi tidak sebaliknya kecuali ada edge (v, u) yang didefinisikan secara terpisah.
+▸	Penerapan nyata konsep struktur data Graf dalam konteks problem solving transportasi.
 
-Dalam konteks transportasi bus, Directed Graph sangat relevan karena rute bus umumnya memiliki arah yang ditentukan. Sebuah bus yang beroperasi dari Terminal A ke Halte B tidak secara otomatis dapat beroperasi dari Halte B ke Terminal A dengan rute yang sama, melainkan menggunakan rute yang mungkin berbeda.
+▸	Pemahaman mendalam terhadap Algoritma Prim dan MST melalui implementasi langsung.
 
-#  2.1.2  Representasi Graph: Adjacency List
-Adjacency List adalah metode representasi graph yang menggunakan array atau dictionary untuk menyimpan daftar tetangga (neighbor) dari setiap vertex. Representasi ini sangat efisien untuk graph sparse (graph dengan jumlah edge jauh lebih sedikit dari jumlah vertex kuadrat).
+▸	Demonstrasi integrasi beberapa algoritma (Prim, BFS, DFS) dalam satu sistem terpadu.
 
-Dalam implementasi Python, Adjacency List dapat direpresentasikan menggunakan defaultdict(list) dari modul collections. Setiap key merepresentasikan sebuah vertex, dan value-nya adalah list berisi informasi semua edge yang keluar dari vertex tersebut, termasuk tujuan, jarak, waktu, dan biaya.
+▸	Referensi pembelajaran DSS berbasis struktur data untuk mahasiswa Teknik Informatika.
 
-<img width="876" height="200" alt="150691" src="https://github.com/user-attachments/assets/4c5aee19-bb67-42e3-ab3f-f1b95741eb5a" />
+Manfaat Praktis
 
+▸	Memberikan model komputasi untuk optimasi rute bus di Labuan Bajo.
 
-#  2.2  Algoritma Prim
+▸	Mendukung pengambilan keputusan dalam perencanaan pengembangan infrastruktur transportasi.
 
-Algoritma Prim adalah algoritma greedy yang digunakan untuk menemukan Minimum Spanning Tree (MST) dari sebuah graph berbobot terhubung. MST adalah sebuah spanning tree (pohon rentang) yang memiliki total bobot edge minimum di antara semua spanning tree yang mungkin dari graph tersebut.
+▸	Menyediakan dasar pengembangan aplikasi transportasi publik berbasis data.
 
-Algoritma ini dinamai sesuai dengan penemunya, Robert C. Prim, yang mempublikasikannya pada tahun 1957. Algoritma Prim bekerja dengan cara membangun MST secara bertahap, dimulai dari sebuah vertex awal, kemudian terus memperluas pohon dengan memilih edge berbobot minimum yang menghubungkan vertex yang sudah ada di MST dengan vertex yang belum.
+▸	Meningkatkan aksesibilitas informasi rute bagi wisatawan dan warga lokal.
 
-#  2.2.1  Langkah-langkah Algoritma Prim
 
-* 1.Inisialisasi: Pilih sembarang vertex sebagai titik awal, masukkan ke dalam himpunan MST.
+# BAB 2 — DASAR TEORI
 
-* 2.Eksplorasi: Temukan semua edge yang menghubungkan vertex dalam MST dengan vertex di luar MST.
+* 2.1  Struktur Data Graph
+  
+Graf (Graph) adalah struktur data yang merepresentasikan hubungan antara kumpulan objek. Secara formal, graf G didefinisikan sebagai pasangan terurut G = (V, E), di mana V adalah himpunan simpul (vertices/nodes) dan E adalah himpunan sisi (edges) yang menghubungkan pasangan simpul
 
-* 3.Seleksi: Pilih edge dengan bobot minimum dari kumpulan edge yang ditemukan.
+* 2.1.1  Jenis-Jenis Graf
 
-* 4.Perluasan: Tambahkan edge tersebut beserta vertex tujuannya ke dalam MST.
 
-* 5.Iterasi: Ulangi langkah 2-4 sampai semua vertex telah masuk ke dalam MST.
 
-# 2.2.2  Kompleksitas Algoritma Prim
 
-![150698](https://github.com/user-attachments/assets/76a744ab-b2da-4fb2-ab7d-386a86a4b60d)
 
 
-Implementasi dalam project ini menggunakan Binary Heap melalui modul heapq Python, sehingga memiliki kompleksitas O(E log V), yang sangat efisien untuk jaringan transportasi dengan sifat sparse graph.
 
-#  2.3  Algoritma Pendukung: BFS dan DFS
 
-Sebagai fitur pendukung dalam sistem DSS, project ini juga mengimplementasikan Breadth-First Search (BFS) dan Depth-First Search (DFS) untuk keperluan pencarian jalur alternatif.
 
-BFS menjelajahi graph secara lapisan demi lapisan (level by level) menggunakan struktur data queue. BFS menjamin ditemukannya jalur dengan jumlah hop (perpindahan halte) minimum antara dua node. Kompleksitas BFS adalah O(V + E).
-
-DFS menjelajahi graph secara mendalam sebelum backtrack, menggunakan struktur data stack (atau rekursi). DFS berguna untuk menemukan jalur alternatif yang mungkin memiliki karakteristik berbeda dari jalur BFS. Kompleksitas DFS juga O(V + E).
-
-# 2.4  Decision Support System (DSS)
-
-Decision Support System (DSS) adalah sistem informasi berbasis komputer yang mendukung pengambilan keputusan dalam situasi semi-terstruktur atau tidak terstruktur. DSS menggabungkan data, model analitis, dan antarmuka pengguna untuk membantu pengambil keputusan dalam menganalisis masalah dan membuat keputusan yang lebih baik.
-
-Komponen utama DSS meliputi: (1) Database Management System yang menyimpan dan mengelola data yang relevan; (2) Model Base Management System yang mengandung model-model kuantitatif untuk analisis; dan (3) Dialog Management System yang menyediakan antarmuka antara pengguna dan sistem.
-
-Dalam konteks project ini, DSS berbasis graph menggunakan jaringan transportasi sebagai model data, algoritma Prim sebagai model analitis utama, dan output teks terformat sebagai antarmuka hasil.
-
-
-# BAB III  ANALISIS DAN PERANCANGAN
-
-* 3.1  Analisis Kebutuhan Sistem
-
-Berdasarkan rumusan masalah dan tujuan yang telah ditetapkan, sistem DSS Transportasi Pintar Labuan Bajo membutuhkan beberapa komponen fungsional utama.
-
-* 3.1.1  Kebutuhan Fungsional
-    * Sistem harus mampu merepresentasikan 8 halte/terminal bus sebagai node dalam Directed Graph.
-    
-    * Sistem harus mampu merepresentasikan 20 rute bus sebagai edge berarah dengan atribut jarak (km), waktu (menit), dan biaya (Rupiah).
-    
-    * Sistem harus mengimplementasikan Algoritma Prim untuk menghasilkan MST dari jaringan transportasi.
-   
-    * Sistem harus menyediakan fitur pencarian jalur menggunakan BFS dan DFS.
-   
-    * Sistem harus menampilkan rekomendasi rute berdasarkan tiga kriteria: jarak terpendek, waktu tercepat, dan biaya termurah.
-   
-    * Sistem harus menampilkan analisis degree (in-degree dan out-degree) setiap halte.
-Sistem harus menghitung skor keputusan berbobot sebagai dasar rekomendasi akhir.
-
-* 3.1.2  Kebutuhan Non-Fungsional
-   * Sistem dikembangkan menggunakan bahasa Python (versi 3.x) tanpa dependensi library eksternal.
-
-   * Kode program menggunakan pendekatan Object-Oriented Programming (OOP) dengan class-class yang terstruktur dan terdokumentasi.
-
-   * Output sistem ditampilkan dalam format teks yang terformat rapi dan mudah dibaca.
-
-   * Struktur kode modular sehingga mudah diperluas dan dipelihara.
- 
-* 3.2  Perancangan Model Graph
-Jaringan transportasi bus Labuan Bajo dimodelkan sebagai Directed Graph G = (V, E) dengan spesifikasi sebagai berikut:
-
-# 3.2.1  Daftar Node (Halte/Terminal)
-
-![150737](https://github.com/user-attachments/assets/a0d5df15-3369-4021-8b06-8ac8d095514d)
-
-# 3.2.2  Daftar Edge (Rute Bus) Utama
-
-<img width="1009" height="702" alt="150771" src="https://github.com/user-attachments/assets/8b7e45e1-96a4-433f-9249-0467c7e8a132" />
-
-# 3.3  Perancangan Arsitektur Sistem
-
-   * Sistem dirancang menggunakan pola arsitektur modular berbasis OOP dengan empat kelas utama yang saling berinteraksi:
-
-   * DirectedGraph: Kelas inti yang mengelola representasi graph, termasuk penambahan node dan edge, serta penyimpanan adjacency list.
-
-   * AlgoritmaPrim: Kelas yang mengimplementasikan algoritma Prim menggunakan priority queue (heap) untuk menemukan MST.
-
-   * PencarianJalur: Kelas yang mengimplementasikan BFS dan DFS untuk pencarian jalur dan kalkulasi detail rute.
-
-   * DSSTransportasi: Kelas integrasi yang menggabungkan semua komponen dan menyediakan fungsi rekomendasi serta analisis jaringan.
-
-# 3.4  Perancangan Alur Kerja Sistem
-
-Alur kerja sistem DSS Transportasi Pintar Labuan Bajo mengikuti tahapan sebagai berikut:
-
-* 1.Inisialisasi Data: Sistem memuat data halte (node) dan rute (edge) ke dalam struktur Directed Graph.
-
-* 2.Representasi Graf: Sistem menampilkan adjacency list lengkap dengan atribut setiap edge.
-
-* 3.Analisis Statistik: Sistem menghitung dan menampilkan statistik jaringan termasuk degree analysis.
-
-* 4.Eksekusi Prim: Sistem menjalankan Algoritma Prim dari node awal dan menampilkan setiap langkah iterasi.
-
-* 5.Rekomendasi Rute: Berdasarkan input pasangan halte dan preferensi, sistem menjalankan BFS/DFS lalu mengevaluasi dengan skor berbobot.
-
-* 6.Output Rekomendasi: Sistem menampilkan rute terbaik beserta detail dan alternatif yang tersedia.
-
-
-# BAB IV  IMPLEMENTASI
-
-# 4.1  Lingkungan Pengembangan
-
-<img width="975" height="399" alt="150779" src="https://github.com/user-attachments/assets/711c4384-fa3b-4753-b6e8-c960cf8e278c" />
-
-# 4.2  Implementasi Directed Graph
-
-Kelas DirectedGraph menggunakan defaultdict(list) dari modul collections sebagai struktur penyimpanan adjacency list. Setiap edge menyimpan empat atribut: tujuan (node tujuan), jarak (dalam kilometer), waktu (dalam menit), dan biaya (dalam Rupiah). Implementasi ini memungkinkan akses O(1) ke daftar tetangga setiap node.
-
-<img width="975" height="471" alt="150801" src="https://github.com/user-attachments/assets/d3bcbaf0-71bb-4d7b-837b-3a6db63749f7" />
-
-# 4.3  Implementasi Algoritma Prim
-
-Implementasi Algoritma Prim menggunakan heap (priority queue) dari modul heapq Python. Karena input adalah Directed Graph tetapi Prim membutuhkan graph tidak berarah, sistem membuat undirected adjacency secara on-the-fly dengan menggabungkan edge kedua arah. Hal ini memungkinkan Prim bekerja dengan benar tanpa mengubah struktur data asli.
-
-<img width="972" height="635" alt="150809" src="https://github.com/user-attachments/assets/3b2c0c26-dfb4-4f11-a4d6-e0426a8a9ad8" />
 
 
 
