@@ -260,12 +260,35 @@ Formula skor keputusan menggunakan pendekatan weighted sum model (WSM) dengan bo
 
 Pengujian dilakukan terhadap tiga skenario utama yang mencakup seluruh fungsionalitas sistem.
 
-*" Skenario 1 — Analisis MST via Algoritma Prim (Node Awal: LBJ)
+" Skenario 1 — Analisis MST via Algoritma Prim (Node Awal: LBJ)
 
 Algoritma Prim berjalan dari Terminal Labuan Bajo (LBJ) dan menghasilkan 7 edge MST yang menghubungkan seluruh 8 halte. Berikut rekonstruksi hasil MST:
 
+<img width="905" height="534" alt="151593" src="https://github.com/user-attachments/assets/31d5aec6-db21-4e1f-b957-8ac56cbf53a2" />
 
+<img width="928" height="607" alt="151595" src="https://github.com/user-attachments/assets/3b1c5652-8ef0-42ab-965b-abeb0b28db99" />
 
+Skenario 2 — Rekomendasi Rute LBJ → CAR (Prioritas: Jarak)
+Sistem mencari rute dari Terminal Labuan Bajo ke Terminal Carep dengan prioritas jarak minimum menggunakan BFS dan DFS.
 
+<img width="1069" height="246" alt="151597" src="https://github.com/user-attachments/assets/c67bbf29-e4dc-4d99-8afb-7c9868fe693a" />
+
+#:Skenario 3 — Analisis Degree Jaringan
+
+<img width="899" height="519" alt="151599" src="https://github.com/user-attachments/assets/eb306568-8d5a-4412-9901-3cdeebab1284" />
+
+# 5.2  Analisis Hasil
+
+* Algoritma Prim berhasil menemukan MST dengan 7 edge yang menghubungkan 8 halte dengan total jarak 14.6 km — jauh lebih efisien dibandingkan total 20 rute asli (52.4 km).
+
+* Halte Komodo Village (KMD) memiliki degree total tertinggi (7), menjadikannya simpul paling kritis dalam jaringan. Gangguan pada halte ini berpotensi memutus konektivitas jaringan secara signifikan.
+
+* BFS secara konsisten menghasilkan rute dengan jumlah transit lebih sedikit, yang umumnya berkorelasi dengan jarak dan waktu tempuh yang lebih pendek.
+  
+* Formula skor multi-kriteria (40% jarak + 40% waktu + 20% biaya) terbukti memberikan ranking yang wajar dan dapat disesuaikan dengan kebutuhan.
+
+# 5.3  Kompleksitas Algoritma
+
+<img width="864" height="356" alt="151601" src="https://github.com/user-attachments/assets/86a03138-234f-49de-b0f8-67c1d8b69ee6" />
 
 
