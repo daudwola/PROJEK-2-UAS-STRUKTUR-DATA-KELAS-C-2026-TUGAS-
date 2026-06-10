@@ -148,7 +148,7 @@ Jaringan transportasi bus Labuan Bajo dimodelkan sebagai Directed Graph G = (V, 
 
 <img width="1009" height="702" alt="150771" src="https://github.com/user-attachments/assets/8b7e45e1-96a4-433f-9249-0467c7e8a132" />
 
-3.3  Perancangan Arsitektur Sistem
+# 3.3  Perancangan Arsitektur Sistem
 
    * Sistem dirancang menggunakan pola arsitektur modular berbasis OOP dengan empat kelas utama yang saling berinteraksi:
 
@@ -160,7 +160,7 @@ Jaringan transportasi bus Labuan Bajo dimodelkan sebagai Directed Graph G = (V, 
 
    * DSSTransportasi: Kelas integrasi yang menggabungkan semua komponen dan menyediakan fungsi rekomendasi serta analisis jaringan.
 
-3.4  Perancangan Alur Kerja Sistem
+# 3.4  Perancangan Alur Kerja Sistem
 
 Alur kerja sistem DSS Transportasi Pintar Labuan Bajo mengikuti tahapan sebagai berikut:
 
@@ -179,17 +179,18 @@ Alur kerja sistem DSS Transportasi Pintar Labuan Bajo mengikuti tahapan sebagai 
 
 # BAB IV  IMPLEMENTASI
 
-* 4.1  Lingkungan Pengembangan
+# 4.1  Lingkungan Pengembangan
 
 <img width="975" height="399" alt="150779" src="https://github.com/user-attachments/assets/711c4384-fa3b-4753-b6e8-c960cf8e278c" />
 
-* 4.2  Implementasi Directed Graph
+# 4.2  Implementasi Directed Graph
 
 Kelas DirectedGraph menggunakan defaultdict(list) dari modul collections sebagai struktur penyimpanan adjacency list. Setiap edge menyimpan empat atribut: tujuan (node tujuan), jarak (dalam kilometer), waktu (dalam menit), dan biaya (dalam Rupiah). Implementasi ini memungkinkan akses O(1) ke daftar tetangga setiap node.
 
 <img width="975" height="471" alt="150801" src="https://github.com/user-attachments/assets/d3bcbaf0-71bb-4d7b-837b-3a6db63749f7" />
 
-* 4.3  Implementasi Algoritma Prim
+# 4.3  Implementasi Algoritma Prim
+
 Implementasi Algoritma Prim menggunakan heap (priority queue) dari modul heapq Python. Karena input adalah Directed Graph tetapi Prim membutuhkan graph tidak berarah, sistem membuat undirected adjacency secara on-the-fly dengan menggabungkan edge kedua arah. Hal ini memungkinkan Prim bekerja dengan benar tanpa mengubah struktur data asli.
 
 <img width="972" height="635" alt="150809" src="https://github.com/user-attachments/assets/3b2c0c26-dfb4-4f11-a4d6-e0426a8a9ad8" />
