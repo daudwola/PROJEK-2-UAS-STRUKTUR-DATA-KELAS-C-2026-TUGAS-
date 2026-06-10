@@ -183,5 +183,18 @@ Alur kerja sistem DSS Transportasi Pintar Labuan Bajo mengikuti tahapan sebagai 
 
 <img width="975" height="399" alt="150779" src="https://github.com/user-attachments/assets/711c4384-fa3b-4753-b6e8-c960cf8e278c" />
 
+* 4.2  Implementasi Directed Graph
+
+Kelas DirectedGraph menggunakan defaultdict(list) dari modul collections sebagai struktur penyimpanan adjacency list. Setiap edge menyimpan empat atribut: tujuan (node tujuan), jarak (dalam kilometer), waktu (dalam menit), dan biaya (dalam Rupiah). Implementasi ini memungkinkan akses O(1) ke daftar tetangga setiap node.
+
+<img width="975" height="471" alt="150801" src="https://github.com/user-attachments/assets/d3bcbaf0-71bb-4d7b-837b-3a6db63749f7" />
+
+* 4.3  Implementasi Algoritma Prim
+Implementasi Algoritma Prim menggunakan heap (priority queue) dari modul heapq Python. Karena input adalah Directed Graph tetapi Prim membutuhkan graph tidak berarah, sistem membuat undirected adjacency secara on-the-fly dengan menggabungkan edge kedua arah. Hal ini memungkinkan Prim bekerja dengan benar tanpa mengubah struktur data asli.
+
+<img width="972" height="635" alt="150809" src="https://github.com/user-attachments/assets/3b2c0c26-dfb4-4f11-a4d6-e0426a8a9ad8" />
+
+
+
 
 
