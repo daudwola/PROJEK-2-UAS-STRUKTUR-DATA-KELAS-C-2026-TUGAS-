@@ -144,15 +144,44 @@ Jaringan transportasi bus Labuan Bajo dimodelkan sebagai Directed Graph G = (V, 
 
 ![150737](https://github.com/user-attachments/assets/a0d5df15-3369-4021-8b06-8ac8d095514d)
 
+# 3.2.2  Daftar Edge (Rute Bus) Utama
+
+<img width="1009" height="702" alt="150771" src="https://github.com/user-attachments/assets/8b7e45e1-96a4-433f-9249-0467c7e8a132" />
+
+3.3  Perancangan Arsitektur Sistem
+
+   * Sistem dirancang menggunakan pola arsitektur modular berbasis OOP dengan empat kelas utama yang saling berinteraksi:
+
+   * DirectedGraph: Kelas inti yang mengelola representasi graph, termasuk penambahan node dan edge, serta penyimpanan adjacency list.
+
+   * AlgoritmaPrim: Kelas yang mengimplementasikan algoritma Prim menggunakan priority queue (heap) untuk menemukan MST.
+
+   * PencarianJalur: Kelas yang mengimplementasikan BFS dan DFS untuk pencarian jalur dan kalkulasi detail rute.
+
+   * DSSTransportasi: Kelas integrasi yang menggabungkan semua komponen dan menyediakan fungsi rekomendasi serta analisis jaringan.
+
+3.4  Perancangan Alur Kerja Sistem
+
+Alur kerja sistem DSS Transportasi Pintar Labuan Bajo mengikuti tahapan sebagai berikut:
+
+* 1.Inisialisasi Data: Sistem memuat data halte (node) dan rute (edge) ke dalam struktur Directed Graph.
+
+* 2.Representasi Graf: Sistem menampilkan adjacency list lengkap dengan atribut setiap edge.
+
+* 3.Analisis Statistik: Sistem menghitung dan menampilkan statistik jaringan termasuk degree analysis.
+
+* 4.Eksekusi Prim: Sistem menjalankan Algoritma Prim dari node awal dan menampilkan setiap langkah iterasi.
+
+* 5.Rekomendasi Rute: Berdasarkan input pasangan halte dan preferensi, sistem menjalankan BFS/DFS lalu mengevaluasi dengan skor berbobot.
+
+* 6.Output Rekomendasi: Sistem menampilkan rute terbaik beserta detail dan alternatif yang tersedia.
 
 
+# BAB IV  IMPLEMENTASI
 
+* 4.1  Lingkungan Pengembangan
 
-
-
-
-
-
+<img width="975" height="399" alt="150779" src="https://github.com/user-attachments/assets/711c4384-fa3b-4753-b6e8-c960cf8e278c" />
 
 
 
