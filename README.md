@@ -46,3 +46,26 @@ Sistem mengintegrasikan tiga komponen utama: model graf jaringan jalan, algoritm
  * E = himpunan sisi (edge) merepresentasikan jalur langsung antar halte
    
  * w: E -> R+ = fungsi bobot merepresentasikan jarak dalam kilometer
+
+# 2.2 Daftar Halte
+
+
+  <img width="835" height="457" alt="150473" src="https://github.com/user-attachments/assets/efab7952-1265-44c7-9555-b85dea6ea1c1" />
+
+# 2.3 Daftar Jalur
+
+
+<img width="817" height="328" alt="150477" src="https://github.com/user-attachments/assets/9bfd6dfc-1d9b-4120-b2b0-e00f6a2f4387" />
+
+
+<img width="817" height="406" alt="150481" src="https://github.com/user-attachments/assets/80f93d29-6191-41b4-8283-aee97129a47d" />
+
+
+# 3. Algoritma Dijkstra
+
+Algoritma Dijkstra adalah algoritma pencarian jalur terpendek dari satu simpul sumber ke semua simpul lain dalam graf berbobot non-negatif. Algoritma ini dikembangkan oleh Edsger W. Dijkstra pada tahun 1956.
+
+# 3.1 Konsep Dasar
+
+  Algoritma Dijkstra menggunakan pendekatan greedy dengan mempertahankan satu set simpul yang sudah dikunjungi dan satu set simpul yang belum dikunjungi. Pada setiap iterasi, simpul dengan jarak minimum yang belum dikunjungi dipilih dan diproses.
+
