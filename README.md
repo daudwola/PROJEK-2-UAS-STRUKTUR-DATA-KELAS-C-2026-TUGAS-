@@ -100,25 +100,12 @@ Decision Support System (DSS) adalah sistem berbasis komputer yang membantu peng
 
 * 2.3  Algoritma Graf yang Digunakan
 
-* 2.3.1  Algoritma Prim — Minimum Spanning Tree
+* 2.3.1  Algoritma Dijkstra
+  
+.<img width="917" height="527" alt="153244" src="https://github.com/user-attachments/assets/5ddab3be-1ba4-47f0-a922-f4d0f6abfd1b" />
 
-Algoritma Prim adalah algoritma greedy untuk menemukan Minimum Spanning Tree (MST) pada graf berbobot. MST adalah subgraf pohon (tree) yang menghubungkan semua simpul dengan total bobot sisi minimum tanpa membentuk siklus.
 
-<img width="954" height="310" alt="image" src="https://github.com/user-attachments/assets/95a405f3-1eb3-42a4-8932-eee0654f3e5e" />
 
-# Langkah-langkah Algoritma Prim:
-
-1.	Pilih simpul awal secara arbitrer (proyek: Terminal Labuan Bajo / LBJ).
-
-2.	Masukkan simpul awal ke dalam himpunan MST (dikunjungi).
-
-3.	Tambahkan semua sisi dari simpul di MST ke dalam priority queue (min-heap berdasarkan bobot).
-
-4.	Pilih sisi berbobot minimum dari priority queue yang menghubungkan simpul dalam MST ke simpul di luar MST.
-
-5.	Tambahkan simpul tujuan ke MST, tambahkan sisi ke hasil MST.
-
-6.	Ulangi langkah 3-5 hingga semua simpul masuk MST
 
 2.3.2  Breadth-First Search (BFS)
 BFS adalah algoritma traversal graf yang mengeksplorasi simpul-simpul berdasarkan jarak (jumlah hop) dari simpul asal. BFS menggunakan struktur data antrian (queue) dan menjamin ditemukannya jalur dengan jumlah hop minimum.
@@ -152,7 +139,7 @@ Permasalahan inti yang diselesaikan dalam proyek ini adalah optimasi jaringan tr
 
 * 3.1.2  Perspektif Algoritma
 
-▸	MST via Prim: Mengidentifikasi backbone rute minimum yang menghubungkan semua 8 halte.
+▸	MST via Disjktra: Mengidentifikasi  rute terdekat yang menghubungkan semua 8 halte.
 
 ▸	BFS: Memberikan jalur dengan jumlah transit minimum antara dua halte.
 
@@ -332,3 +319,5 @@ Pengembangan Jangka Pendek
 
 
 # https://ap.wps.com/cms/docs/d/cbPaeokbCh79ltRA?sa=601.1074
+
+
