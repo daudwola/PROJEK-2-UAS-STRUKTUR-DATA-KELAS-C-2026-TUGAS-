@@ -1,3 +1,9 @@
+
+<img width="225" height="225" alt="153362" src="https://github.com/user-attachments/assets/7c9bc340-90e7-409c-9ee5-ec89c98adc6e" />
+
+
+
+
 # PROJEK-2-UAS-STRUKTUR-DATA-KELAS-C-2026-TUGAS-
 PROJEK 2 UAS STRUKTUR DATA
 
@@ -305,5 +311,5 @@ Beberapa saran untuk pengembangan sistem ke depannya:
 
 •	Sistem autentikasi: menambahkan fitur login untuk pengelola sistem dalam melakukan pembaruan data rute.
 
-
+https://drive.google.com/drive/folders/1Q9yoRxwi57xfrcXWy5qhBWNAmAKRJl0r
 
