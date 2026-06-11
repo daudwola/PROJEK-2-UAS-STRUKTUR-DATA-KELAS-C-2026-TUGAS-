@@ -23,14 +23,14 @@ Sistem transportasi publik yang ada saat ini belum mampu merespons kebutuhan mob
 
 Dalam konteks ilmu komputer, permasalahan jaringan transportasi dapat dimodelkan secara elegan menggunakan struktur data Graf (Graph). Setiap halte bus direpresentasikan sebagai simpul (node), sementara rute yang menghubungkan dua halte direpresentasikan sebagai sisi (edge) berbobot. Model ini memungkinkan penerapan berbagai algoritma graf klasik untuk menganalisis dan mengoptimalkan jaringan transportasi.
 
-Salah satu algoritma yang relevan adalah Algoritma Prim untuk mencari Minimum Spanning Tree (MST). MST memberikan representasi jaringan rute backbone paling efisien yang menghubungkan seluruh halte dengan total jarak minimum — sangat berguna dalam perencanaan pengembangan infrastruktur transportasi.
+Salah satu algoritma yang relevan adalah Algoritma disjktra untuk mencari jalur terdekat di halte berikut nya. Disjktra memberikan representasi jaringan rute terdekat paling efisien yang terhubung seluruh halte dengan total jarak minimum — sangat berguna dalam perencanaan pengembangan infrastruktur transportasi.
 
 Proyek ini merupakan implementasi Decision Support System (DSS) berbasis Directed Graph untuk sistem transportasi pintar di Labuan Bajo. Program diimplementasikan dalam bahasa Python dengan mengintegrasikan Algoritma Prim (MST), Breadth-First Search (BFS), dan Depth-First Search (DFS) sebagai komponen inti pengambilan keputusan.
 
 * 1.2  Rumusan Masalah
   
 1.	Bagaimana merepresentasikan jaringan rute bus Labuan Bajo dalam bentuk Directed Graph yang dapat diproses secara komputasional?
-2.	Bagaimana mengimplementasikan Algoritma Prim untuk menemukan Minimum Spanning Tree pada jaringan transportasi guna mengidentifikasi rute backbone paling efisien?
+2.	Bagaimana mengimplementasikan Algoritma disjktra untuk menemukan jalur terdekat yang dapat menemukan rute terdekat pada halte.
 3.	Bagaimana mengintegrasikan algoritma pencarian jalur (BFS dan DFS) untuk memberikan rekomendasi rute berdasarkan preferensi pengguna (jarak, waktu, atau biaya)?
 4.	Bagaimana merancang sistem DSS yang dapat menganalisis dan menyajikan informasi jaringan transportasi secara informatif kepada pengguna?
 
@@ -38,7 +38,7 @@ Proyek ini merupakan implementasi Decision Support System (DSS) berbasis Directe
   
 ▸	Mengimplementasikan Directed Graph sebagai struktur data utama untuk merepresentasikan jaringan bus Labuan Bajo dengan 8 halte dan 20 rute.
 
-▸	Menerapkan Algoritma Prim untuk menemukan MST yang merepresentasikan jaringan rute bus paling efisien dari sisi total jarak tempuh.
+▸	Menerapkan Algoritma disjktra dengan cara menentukan jalur terdekat pada 8 halte.
 
 ▸	Mengembangkan modul pencarian jalur menggunakan BFS (pencarian jalur terpendek berdasarkan jumlah hop) dan DFS (pencarian jalur alternatif) antara dua halte.
 
@@ -50,9 +50,9 @@ Manfaat Akademis
 
 ▸	Penerapan nyata konsep struktur data Graf dalam konteks problem solving transportasi.
 
-▸	Pemahaman mendalam terhadap Algoritma Prim dan MST melalui implementasi langsung.
+▸	Pemahaman mendalam terhadap Algoritma disjktra melalui implementasi langsung mencari jalur terdekat.
 
-▸	Demonstrasi integrasi beberapa algoritma (Prim, BFS, DFS) dalam satu sistem terpadu.
+▸	Demonstrasi integrasi beberapa algoritma (disjktra, BFS, DFS) dalam satu sistem terpadu.
 
 ▸	Referensi pembelajaran DSS berbasis struktur data untuk mahasiswa Teknik Informatika.
 
@@ -195,7 +195,10 @@ seluruh 8 halte dengan total jarak minimum. Algoritma bekerja secara greedy meng
 * • Subprocess/Proses Pencarian (Persegi Ungu): Mewakili modul pencarian jalur BFS dan DFS sebagai subproses yang berdiri sendiri dalam sistem.
 
 * 3.4  Use Case
-<img width="874" height="461" alt="image" src="https://github.com/user-attachments/assets/7d84786b-6fbc-48f8-95e4-5de34aecbe15" />
+
+<img width="955" height="614" alt="153277" src="https://github.com/user-attachments/assets/5a4bc51a-76d6-45d7-8a6d-e7c56dce1352" />
+
+  
 
 3.5  Struktur Node dan Edge
 <img width="910" height="286" alt="image" src="https://github.com/user-attachments/assets/2fcaa769-fe19-416c-a046-de55a4924035" />
@@ -266,7 +269,7 @@ Sistem mencari rute dari Terminal Labuan Bajo ke Terminal Carep dengan prioritas
 
 # 5.2  Analisis Hasil
 
-* Algoritma Prim berhasil menemukan MST dengan 7 edge yang menghubungkan 8 halte dengan total jarak 14.6 km — jauh lebih efisien dibandingkan total 20 rute asli (52.4 km).
+* Algoritma disjktra berhasil menemukan jalur terdekat yang menghubungkan 8 halte dengan total jarak 14.6 km — jauh lebih efisien dibandingkan total 20 rute asli (52.4 km).
 
 * Halte Komodo Village (KMD) memiliki degree total tertinggi (7), menjadikannya simpul paling kritis dalam jaringan. Gangguan pada halte ini berpotensi memutus konektivitas jaringan secara signifikan.
 
@@ -279,14 +282,14 @@ Sistem mencari rute dari Terminal Labuan Bajo ke Terminal Carep dengan prioritas
 <img width="864" height="356" alt="151601" src="https://github.com/user-attachments/assets/86a03138-234f-49de-b0f8-67c1d8b69ee6" />
 
 <img width="900" height="509" alt="151607" src="https://github.com/user-attachments/assets/6cc8fabe-6317-4b3b-bb8e-b24874eec534" />
-
+ada
 # BAB 6 — KESIMPULAN
 
 # 6.1  Kesimpulan
 
 1. Directed Graph berhasil diimplementasikan sebagai representasi data jaringan bus Labuan Bajo. Adjacency list dengan 8 node dan 20 edge mampu merepresentasikan topologi jaringan yang kompleks secara efisien dengan kompleksitas ruang O(V + E).
 
-2. Algoritma Prim berhasil menemukan Minimum Spanning Tree yang menghubungkan seluruh 8 halte hanya dengan 7 edge dan total jarak 14.6 km. MST ini merepresentasikan backbone rute bus paling efisien dan dapat dijadikan acuan dalam perancangan infrastruktur transportasi.
+2. Algoritma disjktra berhasil menemukan jalur terdekat yang menghubungkan seluruh 8 halte hanya dengan 7 edge dan total jarak 14.6 km. MST ini merepresentasikan backbone rute bus paling efisien dan dapat dijadikan acuan dalam perancangan infrastruktur transportasi.
 
 3. Integrasi BFS dan DFS memberikan dua perspektif pencarian jalur yang saling melengkapi: BFS menjamin jalur dengan hop minimum (efisien untuk pengguna yang menghindari transit), sedangkan DFS menyediakan rute alternatif sebagai cadangan.
 
