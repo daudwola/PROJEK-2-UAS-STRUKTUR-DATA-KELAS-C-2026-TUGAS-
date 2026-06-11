@@ -18,9 +18,9 @@ _____________________________________
 # *Disusun sebagai pemenuhan tugas proyek akhir mata kuliah Struktur Data dan Algoritma*
 
 
-BAB 1 – PENDAHULUAN
+# BAB 1 – PENDAHULUAN
 
-1.1 Latar Belakang
+* 1.1 Latar Belakang
 
 Labuan Bajo merupakan salah satu destinasi pariwisata prioritas nasional di Indonesia yang terletak di ujung barat Pulau Flores, Nusa Tenggara Timur. Sebagai gerbang utama menuju Taman Nasional Komodo, kota ini mengalami pertumbuhan kunjungan wisatawan yang sangat pesat dalam beberapa tahun terakhir. Hal ini berdampak langsung pada kebutuhan layanan transportasi publik yang efisien, andal, dan mudah diakses oleh masyarakat lokal maupun wisatawan.
 
@@ -28,7 +28,7 @@ Transportasi bus kota di Labuan Bajo melayani sejumlah rute strategis yang mengh
 
 Dalam konteks ini, pengembangan Sistem Pendukung Keputusan (Decision Support System / DSS) berbasis teknologi komputasi menjadi sangat relevan. Dengan memanfaatkan struktur data graph dan algoritma Dijkstra, sistem dapat memberikan rekomendasi rute terpendek secara otomatis, membantu pengguna membuat keputusan perjalanan yang lebih baik, efisien, dan tepat waktu.
 
-1.2 Rumusan Masalah
+* 1.2 Rumusan Masalah
 
 Berdasarkan latar belakang yang telah diuraikan, rumusan masalah dalam proyek ini adalah:
 
@@ -42,7 +42,7 @@ Berdasarkan latar belakang yang telah diuraikan, rumusan masalah dalam proyek in
 
 
 
-1.3 Tujuan
+* 1.3 Tujuan
 
 Tujuan dari proyek ini adalah:
 
@@ -56,7 +56,7 @@ Tujuan dari proyek ini adalah:
 
 
 
-1.4 Manfaat
+* 1.4 Manfaat
 
 Manfaat yang diharapkan dari pengembangan sistem ini antara lain:
 
@@ -72,9 +72,9 @@ Manfaat yang diharapkan dari pengembangan sistem ini antara lain:
 
  
 
-BAB 2 – DASAR TEORI
+# BAB 2 – DASAR TEORI
 
-2.1 Struktur Data Graph
+* 2.1 Struktur Data Graph
 
 Graph adalah struktur data non-linear yang terdiri dari kumpulan simpul (node/vertex) yang dihubungkan oleh sejumlah sisi (edge/arc). Secara formal, graph G didefinisikan sebagai pasangan terurut G = (V, E), di mana V adalah himpunan simpul dan E adalah himpunan sisi yang menghubungkan pasangan simpul.
 
@@ -96,7 +96,7 @@ Berdasarkan bobotnya, graph dibedakan menjadi:
 
 Dalam proyek ini digunakan Undirected Weighted Graph karena rute bus dapat ditempuh dua arah dan setiap ruas jalan memiliki jarak (km) yang berbeda-beda.
 
-2.2 Decision Support System (DSS)
+* 2.2 Decision Support System (DSS)
 
 Decision Support System (DSS) atau Sistem Pendukung Keputusan adalah sistem informasi interaktif berbasis komputer yang dirancang untuk membantu pengambil keputusan dalam memecahkan masalah semi-terstruktur dan tidak terstruktur. DSS menggabungkan data, model analitik, dan antarmuka pengguna untuk menghasilkan rekomendasi yang dapat dijadikan dasar pengambilan keputusan.
 
@@ -110,7 +110,7 @@ Komponen utama DSS terdiri dari tiga subsistem:
 
 
 
-2.3 Algoritma Dijkstra
+* 2.3 Algoritma Dijkstra
 
 Algoritma Dijkstra, dikembangkan oleh Edsger W. Dijkstra pada tahun 1956, merupakan algoritma greedy untuk menemukan jalur terpendek antara satu simpul sumber ke semua simpul lain dalam graf berbobot non-negatif.
 
@@ -132,13 +132,13 @@ Kompleksitas waktu algoritma Dijkstra adalah O((V + E) log V) dengan implementas
 
  
 
-BAB 3 – ANALISIS DAN PERANCANGAN
+# BAB 3 – ANALISIS DAN PERANCANGAN
 
-3.1 Analisis Masalah
+* 3.1 Analisis Masalah
 
 Permasalahan inti yang diselesaikan oleh sistem ini adalah menemukan rute bus optimal di jaringan transportasi Labuan Bajo. Dengan 8 halte dan 9 ruas jalan, pencarian manual rute terpendek membutuhkan waktu dan rentan terhadap kesalahan, terutama bagi penumpang yang tidak familiar dengan kota tersebut. Sistem DSS yang dibangun mengotomatisasi proses ini dengan memberikan rekomendasi rute secara instan berdasarkan input halte asal dan tujuan.
 
-3.2 Desain Graph
+* 3.2 Desain Graph
 
 Jaringan transportasi bus Labuan Bajo dimodelkan sebagai Undirected Weighted Graph dengan spesifikasi berikut:
 
@@ -158,7 +158,7 @@ Data Node yang digunakan dalam sistem:
 
 ![153340](https://github.com/user-attachments/assets/395a62b2-1bc2-4927-ba6a-86975e89af66)
 
-3.3 Flowchart Sistem
+* 3.3 Flowchart Sistem
 
 Alur kerja sistem DSS secara keseluruhan dapat digambarkan sebagai berikut:
 
@@ -178,7 +178,7 @@ Alur kerja sistem DSS secara keseluruhan dapat digambarkan sebagai berikut:
 
 <img width="664" height="1039" alt="153343" src="https://github.com/user-attachments/assets/d6d88f52-dd6d-40c5-bb33-5ccc14dc583b" />
 
-3.4 Use Case Sistem
+* 3.4 Use Case Sistem
 
 Sistem memiliki satu aktor utama yaitu Pengguna (penumpang bus). Use case yang tersedia meliputi:
 
@@ -197,9 +197,9 @@ Sistem memiliki satu aktor utama yaitu Pengguna (penumpang bus). Use case yang t
 
 <img width="1080" height="278" alt="153345" src="https://github.com/user-attachments/assets/713c842e-8e7f-43d9-b100-f1a6ce597b4c" />
 
-BAB 4 – IMPLEMENTASI
+# BAB 4 – IMPLEMENTASI
 
-4.1 Implementasi Program
+* 4.1 Implementasi Program
 
 Program diimplementasikan menggunakan bahasa Python dengan framework Streamlit untuk antarmuka web interaktif. Berikut adalah library utama yang digunakan:
 
@@ -213,9 +213,9 @@ Program diimplementasikan menggunakan bahasa Python dengan framework Streamlit u
 
 
 
-4.2 Penjelasan Kode
+* 4.2 Penjelasan Kode
 
-4.2.1 Inisialisasi Graph
+* 4.2.1 Inisialisasi Graph
 
 Pembuatan graph dimulai dengan mendefinisikan semua edge beserta bobotnya:
 
@@ -225,7 +225,7 @@ Pembuatan graph dimulai dengan mendefinisikan semua edge beserta bobotnya:
 
 <img width="1080" height="248" alt="153355" src="https://github.com/user-attachments/assets/5217d76d-4e0a-4c09-9d46-baaf305b32cc" />
 
-4.3 Tampilan Sistem
+* 4.3 Tampilan Sistem
 
 Sistem memiliki dua area tampilan utama:
 
@@ -237,10 +237,73 @@ Sistem memiliki dua area tampilan utama:
 
 Antarmuka menggunakan layout wide Streamlit (st.set_page_config(layout='wide')) untuk memanfaatkan lebar layar secara optimal, memberikan pengalaman pengguna yang lebih baik terutama pada layar desktop.
 
-BAB 5 – PENGUJIAN DAN ANALISIS
+# BAB 5 – PENGUJIAN DAN ANALISIS
 
-5.1 Skenario Pengujian
+* 5.1 Skenario Pengujian
 
 Pengujian dilakukan dengan beberapa skenario untuk memverifikasi kebenaran dan keandalan sistem:
 
 <img width="870" height="331" alt="153357" src="https://github.com/user-attachments/assets/b831271a-5d17-47e5-a3dc-7b9ae5b69a74" />
+
+* 5.2 Analisis Hasil
+
+Berdasarkan hasil pengujian, sistem berhasil menghitung rute terpendek dengan benar untuk seluruh skenario yang diuji. Algoritma Dijkstra yang diimplementasikan melalui NetworkX memberikan hasil yang konsisten dan akurat sesuai dengan data bobot edge yang telah didefinisikan.
+
+Pada skenario 2 (Terminal ke Goa Rangko), algoritma memilih jalur melalui Bandara Komodo dan Batu Cermin dengan jarak total 12 km (5+3+4), bukan melalui jalur langsung Terminal → Pelabuhan → Waterfront → Kampung Ujung → Pede → Goa Rangko yang memiliki total jarak 16 km. Ini membuktikan bahwa algoritma berhasil menemukan jalur optimal yang tidak selalu intuitif.
+
+Estimasi waktu dihitung menggunakan asumsi kecepatan rata-rata 20 km/jam (3 menit per km), yang merupakan perkiraan realistis untuk bus kota di area perkotaan Labuan Bajo dengan kondisi lalu lintas normal.
+
+* 5.3 Kompleksitas Algoritma
+
+Analisis kompleksitas sistem dapat dijabarkan sebagai berikut:
+
+•	Kompleksitas Waktu Dijkstra: O((V + E) log V) dengan priority queue, di mana V = 8 (jumlah node) dan E = 9 (jumlah edge). Untuk skala saat ini, kompleksitas bersifat sangat ringan.
+
+•	Kompleksitas Ruang: O(V + E) untuk menyimpan adjacency list dan O(V) untuk menyimpan array jarak dan visited.
+
+•	Kompleksitas Visualisasi: O(V + E) untuk spring layout, ditambah overhead rendering Matplotlib.
+
+
+
+Dengan jumlah node dan edge yang relatif kecil, performa sistem sangat baik dengan waktu komputasi yang hampir instan (< 1 ms) untuk setiap query rute. Sistem berpotensi diskalakan hingga ratusan node tanpa degradasi performa yang signifikan karena kompleksitas algoritmik yang efisien.
+
+# BAB 6 – KESIMPULAN
+
+* 6.1 Kesimpulan
+
+Berdasarkan hasil perancangan, implementasi, dan pengujian yang telah dilakukan, dapat disimpulkan bahwa:
+
+•	Sistem Pendukung Keputusan (DSS) berbasis graph untuk transportasi bus kota Labuan Bajo berhasil dibangun menggunakan Python, Streamlit, NetworkX, dan Matplotlib.
+
+•	Struktur data Undirected Weighted Graph berhasil merepresentasikan jaringan rute bus dengan 8 halte dan 9 jalur secara akurat dan efisien.
+
+•	Algoritma Dijkstra berhasil diimplementasikan untuk menemukan rute terpendek antar halte dengan kompleksitas waktu O((V + E) log V) yang sangat efisien untuk skala sistem ini.
+
+•	Sistem mampu menyajikan rekomendasi rute terpendek, total jarak, dan estimasi waktu tempuh secara instan melalui antarmuka web yang intuitif.
+
+•	Visualisasi graph interaktif membantu pengguna memahami topologi jaringan bus secara visual.
+
+•	Pengujian pada 5 skenario membuktikan kebenaran dan keandalan sistem dalam memberikan rekomendasi yang optimal.
+
+
+
+* 6.2 Saran Pengembangan
+
+Beberapa saran untuk pengembangan sistem ke depannya:
+
+•	Integrasi data real-time: menambahkan informasi jadwal keberangkatan, ketersediaan kursi, dan posisi bus secara real-time menggunakan GPS tracking.
+
+•	Perluasan jaringan: menambahkan lebih banyak halte dan rute, termasuk rute menuju objek wisata baru di sekitar Labuan Bajo.
+
+•	Multi-kriteria optimasi: mengembangkan sistem untuk mempertimbangkan tidak hanya jarak, tetapi juga waktu tempuh aktual, tarif, dan frekuensi keberangkatan menggunakan metode MCDM (Multi-Criteria Decision Making).
+
+•	Aplikasi mobile: mengembangkan versi mobile berbasis Android/iOS agar lebih mudah diakses oleh wisatawan.
+
+•	Integrasi peta interaktif: mengganti visualisasi statis dengan peta interaktif berbasis Folium atau Google Maps API untuk pengalaman pengguna yang lebih baik.
+
+•	Database dinamis: memindahkan data dari hardcode ke database (PostgreSQL/MongoDB) agar mudah diperbarui tanpa mengubah kode.
+
+•	Sistem autentikasi: menambahkan fitur login untuk pengelola sistem dalam melakukan pembaruan data rute.
+
+
+
