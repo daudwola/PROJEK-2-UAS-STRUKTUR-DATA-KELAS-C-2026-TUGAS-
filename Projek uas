@@ -1,1 +1,160 @@
+import streamlit as st
+import networkx as nx
+import matplotlib.pyplot as plt
+import pandas as pd
 
+st.set_page_config(
+    page_title="DSS Transportasi Bus Labuan Bajo",
+    layout="wide"
+)
+
+st.title("🚌 DSS Transportasi Bus Kota Labuan Bajo")
+st.write("Sistem Pendukung Keputusan berbasis Graph dan Algoritma Dijkstra")
+
+# ==========================
+# DATA GRAPH
+# ==========================
+
+G = nx.Graph()
+
+edges = [
+    ("Terminal", "Pelabuhan", 2),
+    ("Terminal", "Bandara Komodo", 5),
+    ("Pelabuhan", "Waterfront", 1),
+    ("Waterfront", "Kampung Ujung", 2),
+    ("Kampung Ujung", "Pede", 3),
+    ("Pede", "Batu Cermin", 4),
+    ("Bandara Komodo", "Batu Cermin", 3),
+    ("Batu Cermin", "Goa Rangko", 7),
+    ("Pede", "Goa Rangko", 8)
+]
+
+for u, v, w in edges:
+    G.add_edge(u, v, weight=w)
+
+# ==========================
+# SIDEBAR
+# ==========================
+
+st.sidebar.header("Input Perjalanan")
+
+asal = st.sidebar.selectbox(
+    "Pilih Halte Asal",
+    list(G.nodes())
+)
+
+tujuan = st.sidebar.selectbox(
+    "Pilih Halte Tujuan",
+    list(G.nodes())
+)
+
+# ==========================
+# DIJKSTRA
+# ==========================
+
+if st.sidebar.button("Cari Rute Terbaik"):
+
+    try:
+        jalur = nx.dijkstra_path(
+            G,
+            source=asal,
+            target=tujuan,
+            weight="weight"
+        )
+
+        jarak = nx.dijkstra_path_length(
+            G,
+            source=asal,
+            target=tujuan,
+            weight="weight"
+        )
+
+        st.success("Rute berhasil ditemukan")
+
+        st.subheader("📍 Jalur Terbaik")
+
+        st.write(" ➜ ".join(jalur))
+
+        st.subheader("📏 Total Jarak")
+
+        st.write(f"{jarak} km")
+
+        estimasi = jarak * 3
+
+        st.subheader("⏱️ Estimasi Waktu")
+
+        st.write(f"{estimasi} menit")
+
+        df = pd.DataFrame({
+            "Urutan Halte": jalur
+        })
+
+        st.subheader("Detail Perjalanan")
+        st.dataframe(df)
+
+    except:
+        st.error("Rute tidak ditemukan")
+
+# ==========================
+# VISUALISASI GRAPH
+# ==========================
+
+st.subheader("Visualisasi Graph Transportasi")
+
+fig, ax = plt.subplots(figsize=(10,6))
+
+pos = nx.spring_layout(G, seed=42)
+
+nx.draw(
+    G,
+    pos,
+    with_labels=True,
+    node_size=2500,
+    font_size=9,
+    ax=ax
+)
+
+labels = nx.get_edge_attributes(
+    G,
+    'weight'
+)
+
+nx.draw_networkx_edge_labels(
+    G,
+    pos,
+    edge_labels=labels,
+    ax=ax
+)
+
+st.pyplot(fig)
+
+# ==========================
+# DATA NODE DAN EDGE
+# ==========================
+
+st.subheader("Data Jalur Bus")
+
+df_edge = pd.DataFrame(
+    edges,
+    columns=["Asal", "Tujuan", "Jarak (km)"]
+)
+
+st.dataframe(df_edge)
+
+# ==========================
+# ANALISIS DSS
+# ==========================
+
+st.subheader("Analisis DSS")
+
+st.info("""
+Sistem menggunakan:
+
+- Weighted Graph
+- Undirected Graph
+- Algoritma Dijkstra
+
+Tujuan:
+Mencari rute bus dengan jarak terpendek sehingga
+pengguna memperoleh rekomendasi perjalanan yang optimal.
+""")
