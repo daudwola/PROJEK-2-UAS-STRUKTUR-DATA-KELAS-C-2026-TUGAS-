@@ -158,5 +158,89 @@ Data Node yang digunakan dalam sistem:
 
 ![153340](https://github.com/user-attachments/assets/395a62b2-1bc2-4927-ba6a-86975e89af66)
 
+3.3 Flowchart Sistem
+
+Alur kerja sistem DSS secara keseluruhan dapat digambarkan sebagai berikut:
+
+•	Pengguna memilih halte asal dan halte tujuan melalui antarmuka sidebar Streamlit.
+
+•	Pengguna menekan tombol 'Cari Rute Terbaik'.
+
+•	Sistem memanggil fungsi dijkstra_path() dari library NetworkX dengan parameter halte asal dan tujuan.
+
+•	Algoritma Dijkstra memproses graf dan mengembalikan jalur terpendek beserta total jaraknya.
+
+•	Sistem menghitung estimasi waktu tempuh berdasarkan jarak (asumsi: 3 menit per km).
+
+•	Hasil berupa daftar halte, total jarak, dan estimasi waktu ditampilkan kepada pengguna.
+
+•	Visualisasi graph dirender menggunakan Matplotlib dan ditampilkan di halaman utama.
+
+<img width="664" height="1039" alt="153343" src="https://github.com/user-attachments/assets/d6d88f52-dd6d-40c5-bb33-5ccc14dc583b" />
+
+3.4 Use Case Sistem
+
+Sistem memiliki satu aktor utama yaitu Pengguna (penumpang bus). Use case yang tersedia meliputi:
+
+•	UC-01: Melihat visualisasi graph jaringan bus
+
+•	UC-02: Memilih halte asal dari daftar halte yang tersedia
+
+•	UC-03: Memilih halte tujuan dari daftar halte yang tersedia
+
+•	UC-04: Mencari rute terpendek antar halte
+
+•	UC-05: Melihat detail perjalanan (urutan halte, jarak, estimasi waktu)
+
+•	UC-06: Melihat tabel data jalur bus (semua edge dan bobotnya)
 
 
+<img width="1080" height="278" alt="153345" src="https://github.com/user-attachments/assets/713c842e-8e7f-43d9-b100-f1a6ce597b4c" />
+
+BAB 4 – IMPLEMENTASI
+
+4.1 Implementasi Program
+
+Program diimplementasikan menggunakan bahasa Python dengan framework Streamlit untuk antarmuka web interaktif. Berikut adalah library utama yang digunakan:
+
+•	streamlit: framework web app Python untuk antarmuka pengguna
+
+•	networkx: library untuk pembuatan dan analisis jaringan/graph
+
+•	matplotlib: library visualisasi data untuk menggambar graph
+
+•	pandas: library manipulasi data untuk menampilkan tabel
+
+
+
+4.2 Penjelasan Kode
+
+4.2.1 Inisialisasi Graph
+
+Pembuatan graph dimulai dengan mendefinisikan semua edge beserta bobotnya:
+
+![153347](https://github.com/user-attachments/assets/b8b5fff5-96db-41a0-9371-5d4650c0775c)
+
+<img width="858" height="325" alt="153353" src="https://github.com/user-attachments/assets/63e66834-baf4-4cad-9e4d-09a1bf2c3830" />
+
+<img width="1080" height="248" alt="153355" src="https://github.com/user-attachments/assets/5217d76d-4e0a-4c09-9d46-baaf305b32cc" />
+
+4.3 Tampilan Sistem
+
+Sistem memiliki dua area tampilan utama:
+
+•	Sidebar (panel kiri): berisi komponen input berupa dua dropdown untuk memilih halte asal dan tujuan, serta tombol 'Cari Rute Terbaik' untuk memulai proses pencarian.
+
+•	Area utama (panel kanan): menampilkan hasil pencarian rute (jalur, jarak, estimasi waktu), visualisasi graph interaktif, tabel data jalur bus, dan panel analisis DSS.
+
+
+
+Antarmuka menggunakan layout wide Streamlit (st.set_page_config(layout='wide')) untuk memanfaatkan lebar layar secara optimal, memberikan pengalaman pengguna yang lebih baik terutama pada layar desktop.
+
+BAB 5 – PENGUJIAN DAN ANALISIS
+
+5.1 Skenario Pengujian
+
+Pengujian dilakukan dengan beberapa skenario untuk memverifikasi kebenaran dan keandalan sistem:
+
+<img width="870" height="331" alt="153357" src="https://github.com/user-attachments/assets/b831271a-5d17-47e5-a3dc-7b9ae5b69a74" />
