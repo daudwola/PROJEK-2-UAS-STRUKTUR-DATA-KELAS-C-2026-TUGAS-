@@ -314,4 +314,5 @@ Beberapa saran untuk pengembangan sistem ke depannya:
 # LAPORAN UAS
 
 https://drive.google.com/drive/folders/1Q9yoRxwi57xfrcXWy5qhBWNAmAKRJl0r
-
+# SLIDE presentasi 
+https://canva.link/2pf8mv9h98chh65
