@@ -311,5 +311,7 @@ Beberapa saran untuk pengembangan sistem ke depannya:
 
 •	Sistem autentikasi: menambahkan fitur login untuk pengelola sistem dalam melakukan pembaruan data rute.
 
+# LAPORAN UAS
+
 https://drive.google.com/drive/folders/1Q9yoRxwi57xfrcXWy5qhBWNAmAKRJl0r
 
