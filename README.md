@@ -315,4 +315,5 @@ Beberapa saran untuk pengembangan sistem ke depannya:
 
 https://drive.google.com/drive/folders/1Q9yoRxwi57xfrcXWy5qhBWNAmAKRJl0r
 # SLIDE presentasi 
-https://canva.link/8r2ys9akdm64x6t
+
+https://canva.link/7ji39qc359pc7vt
